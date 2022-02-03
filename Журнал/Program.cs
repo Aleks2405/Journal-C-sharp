@@ -17,13 +17,15 @@ namespace one
     {
         static void Main(string[] args)
         {
-            Journal staff = new Journal { Value = 5} ;
+            Journal staff = new Journal { Value = 6} ;
             Journal staff1 = new Journal { Value = 5 };
            Journal staff2 = staff + staff1;
 
-            Console.WriteLine(staff2.Value);
+            Console.WriteLine(staff == staff1);
+            Console.WriteLine(staff.GetHashCode());
+            Console.WriteLine(staff1.GetHashCode());
 
-           
+
 
 
 

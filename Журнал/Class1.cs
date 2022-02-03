@@ -51,15 +51,21 @@ namespace one
         }
 
 
-        public override bool Equals(object obj)              // переопределение метода Equals
+        
+        public override bool Equals(object obj)
         {
-            return this.ToString() == obj.ToString();
+            if (obj is Journal objectType)   
+            {
+                return this.Value == objectType.Value; /*параметр метода представляет тип Journal*/
+            }
+            return false;
         }
 
         public override int GetHashCode()             // необходимо также переопределить метод GetHashCode
         {
-            return this.ToString().GetHashCode();
-        }
+            //return this.ToString().GetHashCode();   так увидем обозначение в памяти 
+            return  Value.GetHashCode();  // выводит сами значения переменных
+    }
         public static bool operator ==(Journal a, Journal b)
         {
             return a.Equals(b);
