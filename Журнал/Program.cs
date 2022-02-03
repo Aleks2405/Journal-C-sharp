@@ -1,5 +1,8 @@
 ﻿using System;
 using one;
+
+//using static System.Console;
+
 /*Ранее в одном из практических заданий вы создавали
 класс «Журнал». Добавьте к уже созданному классу информацию о количестве сотрудников. Выполните перегрузку
 + (для увеличения количества сотрудников на указанную
@@ -14,11 +17,16 @@ namespace one
     {
         static void Main(string[] args)
         {
-            Journal staff = new Journal(5);
+            Journal staff = new Journal { Value = 5} ;
+            Journal staff1 = new Journal { Value = 5 };
+           Journal staff2 = staff + staff1;
 
-            int a = staff + 20;
-             
-            Console.WriteLine(a);
+            Console.WriteLine(staff2.Value);
+
+           
+
+
+
         }
     }
 }
